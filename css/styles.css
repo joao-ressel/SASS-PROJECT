@@ -1,0 +1,213 @@
+* {
+  font-family: "Raleway";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #777;
+}
+body a {
+  color: #777;
+  text-decoration: none;
+  transition: 0.4s;
+}
+body ul {
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+@media screen and (max-width: 425px) {
+  .header {
+    padding: 1.1rem;
+  }
+}
+.header-brand {
+  color: #FFF;
+  font-size: 3rem;
+}
+.header-navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+@media screen and (max-width: 425px) {
+  .header-navbar ul {
+    display: none;
+  }
+}
+.header-navbar ul li {
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.header-navbar ul li .active {
+  color: #20C997;
+}
+.header-navbar ul li a:hover {
+  color: #20C997;
+}
+.header-social-media ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+@media screen and (max-width: 425px) {
+  .header-social-media ul {
+    display: none;
+  }
+}
+.header-social-media ul li {
+  margin: 0 1rem;
+}
+.header-social-media ul li a:hover {
+  color: #FFF;
+}
+
+.portifolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1170px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+@media screen and (max-width: 425px) {
+  .portifolio {
+    flex-direction: column;
+  }
+}
+.portifolio-card {
+  width: 31%;
+  height: 400px;
+  margin-bottom: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FFF;
+}
+@media screen and (max-width: 425px) {
+  .portifolio-card {
+    width: 90%;
+    margin-bottom: 6%;
+  }
+}
+.portifolio-card-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.portifolio-card-btn {
+  padding: 0.6rem 0.2rem;
+  border: 2px solid #FFF;
+  color: #FFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.portifolio-card-btn:hover {
+  background-color: #FFF;
+  color: #000;
+}
+.portifolio #card-1 {
+  background-image: url("../img/fotografia.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-1:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fotografia.jpg");
+}
+.portifolio #card-2 {
+  background-image: url("../img/uiux.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-2:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/uiux.jpg");
+}
+.portifolio #card-3 {
+  background-image: url("../img/design.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-3:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/design.jpg");
+}
+.portifolio #card-4 {
+  background-image: url("../img/digital.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-4:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/digital.jpg");
+}
+.portifolio #card-5 {
+  background-image: url("../img/pintura.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-5:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/pintura.jpg");
+}
+.portifolio #card-6 {
+  background-image: url("../img/desenho.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.portifolio #card-6:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/desenho.jpg");
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
+footer span {
+  color: #20C997;
+}
+
+/*# sourceMappingURL=styles.css.map */
