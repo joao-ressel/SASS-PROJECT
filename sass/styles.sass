@@ -1,13 +1,13 @@
 @use 'variables'
 @use 'mixins'
 *
-    font-family: 'Raleway'
+    font-family: 'Courier Prime'
     padding: 0
     margin: 0
     box-sizing: border-box
 
 body
-    background-color: variables.$bg-color
+    background: #000
     color: variables.$text-color
 
     a
@@ -22,19 +22,21 @@ body
     justify-content: space-between
     @include mixins.container
 
-    @include mixins.mobile
+    @include mixins.phone
         padding: 1.1rem
 
-    &-brand //.header-band
+    &-brand
         color: variables.$primary-color
         font-size: 3rem
-    
+        img
+            height: 32px
+
     &-navbar
         ul
             @include mixins.flex-center
             height: 100%
 
-            @include mixins.mobile
+            @include mixins.phone
                 display: none
 
             li
@@ -53,67 +55,117 @@ body
             @include mixins.flex-center
             height: 100%
 
-            @include mixins.mobile
+            @include mixins.phone
                 display: none
 
             li
-                margin:0 1rem
-                
+                margin: 0 1rem
+
                 a
                     &:hover
                         color: variables.$primary-color
 
-.portifolio
-    @include mixins.flex-center
+.projects
+    @include mixins.grid-3
     @include mixins.container
     flex-wrap: wrap
     justify-content: space-between
     padding: 0
+    gap: 1rem
 
-    @include mixins.mobile
+    @include mixins.phone
         flex-direction: column
-
+        @include mixins.flex-center
+        height: 3000px
+        
     &-card
-        width: 31%
-        height: 400px
-        margin-bottom: 4%
+        flex: 1
+        height: 600px
+        padding: 1rem
+        @include mixins.tablet
+            height: 300px
+        @include mixins.phone
+            height: 300px
+            width: 100%
+
+        &-info
+            @include mixins.flex-center
+            display: none
+            height: 100%
+            flex-direction: column
+            justify-content: space-between
+            color: variables.$primary-color
+            &-list
+                display: flex
+                width: 100%
+                justify-content: center
+                gap: 1rem
+                flex-wrap: wrap
+                li
+                    padding: 0.5rem
+                    background: variables.$secondary-color
+
+            @include mixins.phone
+                width: 90%
+                margin-bottom: 6%
+            &-btn
+                color: variables.$primary-color
+                background-color: variables.$secondary-color
+                font-weight: 600
+                padding: 1rem
+                text-transform: uppercase
+                letter-spacing: 1px
+                &:hover
+                    transform: scale(0.90)
+                    color: variables.$bg-color
+                    background-color: variables.$secondary-color
+        &:hover
+            .projects-card-info
+                display: flex
+    #card-1
+        @include mixins.bg-img('atena.jpg')
+    #card-2
+        @include mixins.bg-img('coffee-delivery.png')
+    #card-3
+        @include mixins.bg-img('ideal.jpg')
+    #card-4
+        @include mixins.bg-img('coffee-house.jpg')
+    #card-5
+        @include mixins.bg-img('idy-program.jpg')
+    #card-6
+        @include mixins.bg-img('ignite-feed.png')
+    #card-7
+        @include mixins.bg-img('vision-gallery.png')
+
+.apresentation
+    @include mixins.flex-center
+    @include mixins.container
+
+    height: calc( 100vh - 6.3rem )
+    text-align: center
+    flex-direction: column
+    gap: 3rem
+
+    @include mixins.phone
+        height: calc( 100vh - 5rem )
+
+    .text
         @include mixins.flex-center
         flex-direction: column
-        color: variables.$primary-color
-
-        @include mixins.mobile
-            width: 90%
-            margin-bottom: 6% 
-
-        &-title
-            font-size:2rem
+        gap: 1rem
+        &-regular
             font-weight: 500
-            margin-bottom: 1rem
+            font-size: 1rem
 
-        &-btn
-            padding: .6rem .2rem
-            border: 2px solid variables.$primary-color
-            color: variables.$primary-color
-            font-weight: 500
-            text-transform: uppercase
-            letter-spacing: 1px
-
-            &:hover
-                background-color: variables.$primary-color
-                color: variables.$bg-color
-    
-    #card-1
-        @include mixins.bg-img('fotografia.jpg')
-    #card-2
-        @include mixins.bg-img('uiux.jpg')
-    #card-3
-        @include mixins.bg-img('design.jpg')
-    #card-4
-        @include mixins.bg-img('digital.jpg')
-    #card-5
-        @include mixins.bg-img('pintura.jpg')
-    #card-6
-        @include mixins.bg-img('desenho.jpg')
+        &-bold
+            font-weight: 600
+            font-size: 1.25rem
+    h2
+        font-weight: 700
+        font-size: 2rem
+        color: variables.$secondary-color
+    i
+        color: variables.$secondary-color
 
 footer
     text-align: center

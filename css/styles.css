@@ -1,16 +1,16 @@
 * {
-  font-family: "Raleway";
+  font-family: "Courier Prime";
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  color: #777;
+  background: #000;
+  color: #dedede;
 }
 body a {
-  color: #777;
+  color: #dedede;
   text-decoration: none;
   transition: 0.4s;
 }
@@ -21,11 +21,11 @@ body ul {
 .header {
   display: flex;
   justify-content: space-between;
-  max-width: 1170px;
+  max-width: 100%;
   padding: 1.5rem 0;
-  margin: 0 auto;
+  margin: 0 1rem;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1000px) {
   .header {
     padding: 1.1rem;
   }
@@ -34,13 +34,16 @@ body ul {
   color: #FFF;
   font-size: 3rem;
 }
+.header-brand img {
+  height: 32px;
+}
 .header-navbar ul {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1000px) {
   .header-navbar ul {
     display: none;
   }
@@ -51,10 +54,10 @@ body ul {
   font-size: 0.8rem;
 }
 .header-navbar ul li .active {
-  color: #20C997;
+  color: #37beaf;
 }
 .header-navbar ul li a:hover {
-  color: #20C997;
+  color: #37beaf;
 }
 .header-social-media ul {
   display: flex;
@@ -62,7 +65,7 @@ body ul {
   justify-content: center;
   height: 100%;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1000px) {
   .header-social-media ul {
     display: none;
   }
@@ -74,132 +77,217 @@ body ul {
   color: #FFF;
 }
 
-.portifolio {
-  display: flex;
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: center;
-  max-width: 1170px;
+  max-width: 100%;
   padding: 1.5rem 0;
-  margin: 0 auto;
+  margin: 0 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  gap: 1rem;
 }
-@media screen and (max-width: 425px) {
-  .portifolio {
+@media screen and (max-width: 1000px) {
+  .projects {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3000px;
   }
 }
-.portifolio-card {
-  width: 31%;
-  height: 400px;
-  margin-bottom: 4%;
+.projects-card {
+  flex: 1;
+  height: 600px;
+  padding: 1rem;
+}
+@media screen and (max-width: 1400px) {
+  .projects-card {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .projects-card {
+    height: 300px;
+    width: 100%;
+  }
+}
+.projects-card-info {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
+  height: 100%;
   flex-direction: column;
+  justify-content: space-between;
   color: #FFF;
 }
-@media screen and (max-width: 425px) {
-  .portifolio-card {
+.projects-card-info-list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.projects-card-info-list li {
+  padding: 0.5rem;
+  background: #37beaf;
+}
+@media screen and (max-width: 1000px) {
+  .projects-card-info {
     width: 90%;
     margin-bottom: 6%;
   }
 }
-.portifolio-card-title {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-.portifolio-card-btn {
-  padding: 0.6rem 0.2rem;
-  border: 2px solid #FFF;
+.projects-card-info-btn {
   color: #FFF;
-  font-weight: 500;
+  background-color: #37beaf;
+  font-weight: 600;
+  padding: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.portifolio-card-btn:hover {
-  background-color: #FFF;
+.projects-card-info-btn:hover {
+  transform: scale(0.9);
   color: #000;
+  background-color: #37beaf;
 }
-.portifolio #card-1 {
-  background-image: url("../img/fotografia.jpg");
+.projects-card:hover .projects-card-info {
+  display: flex;
+}
+.projects #card-1 {
+  background-image: url("../img/atena.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-1:hover {
+.projects #card-1:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fotografia.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/atena.jpg");
 }
-.portifolio #card-2 {
-  background-image: url("../img/uiux.jpg");
+.projects #card-2 {
+  background-image: url("../img/coffee-delivery.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-2:hover {
+.projects #card-2:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/uiux.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/coffee-delivery.png");
 }
-.portifolio #card-3 {
-  background-image: url("../img/design.jpg");
+.projects #card-3 {
+  background-image: url("../img/ideal.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-3:hover {
+.projects #card-3:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/design.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/ideal.jpg");
 }
-.portifolio #card-4 {
-  background-image: url("../img/digital.jpg");
+.projects #card-4 {
+  background-image: url("../img/coffee-house.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-4:hover {
+.projects #card-4:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/digital.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/coffee-house.jpg");
 }
-.portifolio #card-5 {
-  background-image: url("../img/pintura.jpg");
+.projects #card-5 {
+  background-image: url("../img/idy-program.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-5:hover {
+.projects #card-5:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/pintura.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/idy-program.jpg");
 }
-.portifolio #card-6 {
-  background-image: url("../img/desenho.jpg");
+.projects #card-6 {
+  background-image: url("../img/ignite-feed.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: 0.6s;
 }
-.portifolio #card-6:hover {
+.projects #card-6:hover {
   background-size: 110%;
   filter: grayscale(0%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/desenho.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/ignite-feed.png");
+}
+.projects #card-7 {
+  background-image: url("../img/vision-gallery.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+}
+.projects #card-7:hover {
+  background-size: 110%;
+  filter: grayscale(0%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, 0.5)), url("../img/vision-gallery.png");
+}
+
+.apresentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 1.5rem 0;
+  margin: 0 1rem;
+  height: calc(100vh - 6.3rem);
+  text-align: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (max-width: 1000px) {
+  .apresentation {
+    height: calc(100vh - 5rem);
+  }
+}
+.apresentation .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.apresentation .text-regular {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.apresentation .text-bold {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.apresentation h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #37beaf;
+}
+.apresentation i {
+  color: #37beaf;
 }
 
 footer {
@@ -207,7 +295,7 @@ footer {
   padding: 2rem;
 }
 footer span {
-  color: #20C997;
+  color: #37beaf;
 }
 
 /*# sourceMappingURL=styles.css.map */
