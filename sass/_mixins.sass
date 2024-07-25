@@ -1,5 +1,5 @@
 @use 'variables'
-
+@import 'cursor'
 @mixin container 
     max-width: variables.$container-width
     padding: 1.5rem 0
@@ -9,6 +9,10 @@
     display: flex
     align-items: center
     justify-content: center
+
+@mixin flex
+    display: flex
+    align-items: center
 
 @mixin grid-3
     display: grid
@@ -23,13 +27,12 @@
     filter: grayscale(100%)
     transition: .6s
 
-    @include phone
-        
-
-    &:hover
+    &.active
         background-size: 110%
         filter: grayscale(0%)
-        background-image: linear-gradient(rgba(0, 0, 0, 0.567), rgba(0, 0, 0, .5)), url('../img/#{$img}')
+        cursor: pointer
+        background-image: linear-gradient(rgba(0, 0, 0, 0.426), rgba(0, 0, 0, .5)), url('../img/#{$img}')
+        
 
 @mixin phone
     @media screen and (max-width: 1000px)
@@ -39,4 +42,4 @@
     @media screen and (max-width: 1400px)
         @content
 
-        
+

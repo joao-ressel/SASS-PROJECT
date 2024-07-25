@@ -12,14 +12,13 @@
       rel="stylesheet"
     />
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- Estilos da aplicação -->
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <header class="header">
       <a href="" class="header-brand"> <img src="/img/logo-slate.png" alt="" /> </a>
       <nav class="header-navbar">
@@ -38,42 +37,42 @@
       <div class="header-social-media">
         <ul>
           <li>
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
+            <a href="#"> <i class="ph ph-instagram-logo"></i> </a>
+          </li>
+          <li>
+            <a href="#"> <i class="ph ph-github-logo"></i> </a>
           </li>
           <li>
             <a href="#">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-linkedin"></i>
+              <i class="ph ph-linkedin-logo"></i>
             </a>
           </li>
         </ul>
       </div>
     </header>
-    <main>
+    <div class="paralax">
       <section class="apresentation">
-        <div class="text">
+        <div class="apresentation-text">
           <p class="text-regular">Olá Mundo! Eu sou</p>
           <h2>João Carlos Ressel</h2>
           <p class="text-bold">
             Apaixonado por Design, dedicado a criar uma ótima experiência para o usuário.
           </p>
         </div>
-        <div>
-
-          <i class="fa-solid fa-arrow-down fa-bounce"></i>
-          <i class="fa-solid fa-arrow-down fa-bounce"></i>
-          <i class="fa-solid fa-arrow-down fa-bounce"></i>
-        </div>
       </section>
-
+    </div>
+    <main>
+      <section class="tecnologies">
+        <i class="ph ph-file-html"></i>
+        <i class="ph ph-file-css"></i>
+        <i class="ph ph-file-tsx"></i>
+        <i class="ph ph-file-jsx"></i>
+        <i class="ph ph-atom"></i>
+        <i class="ph ph-angular-logo"></i>
+        <i class="ph ph-figma-logo"></i>
+      </section>
       <section class="projects">
-        <div class="projects-card" id="card-2">
+        <div onclick="toggleActive(this)" class="projects-card" id="card-1">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>
@@ -83,17 +82,7 @@
             <a href="" class="projects-card-info-btn">Ignite Feed</a>
           </div>
         </div>
-        <div class="projects-card" id="card-3">
-            <div class="projects-card-info">
-              <ul class="projects-card-info-list">
-                <li>React</li>
-                <li>UI/UX</li>
-                <li>TypeScript</li>
-              </ul>
-              <a href="" class="projects-card-info-btn">Ignite Feed</a>
-            </div>
-        </div>
-        <div class="projects-card" id="card-4">
+        <div class="projects-card" onclick="toggleActive(this)" id="card-2">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>
@@ -103,7 +92,7 @@
             <a href="" class="projects-card-info-btn">Ignite Feed</a>
           </div>
         </div>
-        <div class="projects-card" id="card-1">
+        <div class="projects-card" onclick="toggleActive(this)" id="card-3">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>
@@ -113,7 +102,7 @@
             <a href="" class="projects-card-info-btn">Ignite Feed</a>
           </div>
         </div>
-        <div class="projects-card" id="card-5">
+        <div class="projects-card" onclick="toggleActive(this)" id="card-4">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>
@@ -123,7 +112,7 @@
             <a href="" class="projects-card-info-btn">Ignite Feed</a>
           </div>
         </div>
-        <div class="projects-card" id="card-6">
+        <div class="projects-card" onclick="toggleActive(this)" id="card-5">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>
@@ -133,7 +122,17 @@
             <a href="" class="projects-card-info-btn">Ignite Feed</a>
           </div>
         </div>
-        <div class="projects-card" id="card-7">
+        <div class="projects-card" onclick="toggleActive(this)" id="card-6">
+          <div class="projects-card-info">
+            <ul class="projects-card-info-list">
+              <li>React</li>
+              <li>UI/UX</li>
+              <li>TypeScript</li>
+            </ul>
+            <a href="" class="projects-card-info-btn">Ignite Feed</a>
+          </div>
+        </div>
+        <div class="projects-card" onclick="toggleActive(this)" id="card-7">
           <div class="projects-card-info">
             <ul class="projects-card-info-list">
               <li>React</li>

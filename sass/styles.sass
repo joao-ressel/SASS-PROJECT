@@ -1,5 +1,7 @@
 @use 'variables'
 @use 'mixins'
+// @import 'cursor'
+@use 'cursor'
 *
     font-family: 'Courier Prime'
     padding: 0
@@ -9,6 +11,7 @@
 body
     background: #000
     color: variables.$text-color
+    cursor: none
 
     a
         color: variables.$text-color
@@ -19,25 +22,31 @@ body
 
 .header
     display: flex
-    justify-content: space-between
     @include mixins.container
+    justify-content: space-between
+    position: fixed
+    z-index: 1
+    width: 100%
+    padding: 0 1rem
+    margin: 0 auto
 
     @include mixins.phone
         padding: 1.1rem
+        align-items: flex-start
 
     &-brand
         color: variables.$primary-color
         font-size: 3rem
+        @include mixins.phone
+            font-size: 1rem
         img
             height: 32px
 
     &-navbar
         ul
-            @include mixins.flex-center
+            @include mixins.flex
+            align-items: flex-start
             height: 100%
-
-            @include mixins.phone
-                display: none
 
             li
                 margin: 0 1rem
@@ -52,11 +61,11 @@ body
                         color: variables.$secondary-color
     &-social-media
         ul
-            @include mixins.flex-center
+            @include mixins.flex
             height: 100%
-
-            @include mixins.phone
-                display: none
+            display: flex
+            gap: 1rem
+            flex-direction: column
 
             li
                 margin: 0 1rem
@@ -77,7 +86,7 @@ body
         flex-direction: column
         @include mixins.flex-center
         height: 3000px
-        
+
     &-card
         flex: 1
         height: 600px
@@ -95,6 +104,7 @@ body
             flex-direction: column
             justify-content: space-between
             color: variables.$primary-color
+            margin: 0 auto
             &-list
                 display: flex
                 width: 100%
@@ -103,7 +113,7 @@ body
                 flex-wrap: wrap
                 li
                     padding: 0.5rem
-                    background: variables.$secondary-color
+                    background: variables.$bg-color
 
             @include mixins.phone
                 width: 90%
@@ -115,13 +125,13 @@ body
                 padding: 1rem
                 text-transform: uppercase
                 letter-spacing: 1px
-                &:hover
-                    transform: scale(0.90)
-                    color: variables.$bg-color
-                    background-color: variables.$secondary-color
-        &:hover
-            .projects-card-info
-                display: flex
+        &.active
+            transform: scale(0.90)
+            color: variables.$bg-color
+            background-color: variables.$secondary-color
+            &.active
+                .projects-card-info
+                    display: flex
     #card-1
         @include mixins.bg-img('atena.jpg')
     #card-2
@@ -136,11 +146,20 @@ body
         @include mixins.bg-img('ignite-feed.png')
     #card-7
         @include mixins.bg-img('vision-gallery.png')
-
+.paralax
+    background-image: url("/img/fundo.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    position: fixed
+    width: 100%
+main
+    position: relative
+    top: 100vh
+    background: variables.$bg-color
 .apresentation
-    @include mixins.flex-center
+    @include mixins.flex
     @include mixins.container
-
+    justify-content: space-between
     height: calc( 100vh - 6.3rem )
     text-align: center
     flex-direction: column
@@ -149,10 +168,11 @@ body
     @include mixins.phone
         height: calc( 100vh - 5rem )
 
-    .text
-        @include mixins.flex-center
+    &-text
+        @include mixins.flex
         flex-direction: column
         gap: 1rem
+        margin: auto 0
         &-regular
             font-weight: 500
             font-size: 1rem
@@ -164,8 +184,26 @@ body
         font-weight: 700
         font-size: 2rem
         color: variables.$secondary-color
+    &-arrows
+
+        i
+            color: variables.$secondary-color
+            font-size: 1.5rem
+            font-weight: bold
+            position: relative
+
+.tecnologies
+    display: flex
+    margin: 1rem auto
+    justify-content: space-between
+    width: 1200px
+    height: 6rem
     i
-        color: variables.$secondary-color
+        padding: 1rem 0
+        font-size: 4rem
+        &:hover
+            transform: rotateY(360deg)
+            transition: 1s
 
 footer
     text-align: center
