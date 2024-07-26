@@ -6,7 +6,7 @@ document.addEventListener('mousemove', function(e) {
 
 function toggleActive(element) {
     // Seleciona todos os elementos com a classe 'projects-card'
-    const elements = document.querySelectorAll('.projects-card');
+    const elements = document.querySelectorAll('.projects-list-card');
     
     // Remove a classe 'active' de todos os elementos
     elements.forEach(el => el.classList.remove('active'));

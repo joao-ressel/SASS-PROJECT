@@ -1,7 +1,12 @@
 @use 'variables'
 @use 'mixins'
-// @import 'cursor'
 @use 'cursor'
+
+@import 'header'
+@import 'apresentation'
+@import 'tecnologies'
+@import 'projects'
+
 *
     font-family: 'Courier Prime'
     padding: 0
@@ -9,7 +14,9 @@
     box-sizing: border-box
 
 body
-    background: #000
+    display: flex
+    flex-direction: column
+    background: url('/img/sizzle.gif')
     color: variables.$text-color
     cursor: none
 
@@ -20,194 +27,27 @@ body
     ul
         list-style: none
 
-.header
-    display: flex
-    @include mixins.container
-    justify-content: space-between
-    position: fixed
-    z-index: 1
-    width: 100%
-    padding: 0 1rem
-    margin: 0 auto
-
-    @include mixins.phone
-        padding: 1.1rem
-        align-items: flex-start
-
-    &-brand
-        color: variables.$primary-color
-        font-size: 3rem
-        @include mixins.phone
-            font-size: 1rem
-        img
-            height: 32px
-
-    &-navbar
-        ul
-            @include mixins.flex
-            align-items: flex-start
-            height: 100%
-
-            li
-                margin: 0 1rem
-                text-transform: uppercase
-                font-size: .8rem
-
-                .active
-                    color: variables.$secondary-color
-
-                a
-                    &:hover
-                        color: variables.$secondary-color
-    &-social-media
-        ul
-            @include mixins.flex
-            height: 100%
-            display: flex
-            gap: 1rem
-            flex-direction: column
-
-            li
-                margin: 0 1rem
-
-                a
-                    &:hover
-                        color: variables.$primary-color
-
-.projects
-    @include mixins.grid-3
-    @include mixins.container
-    flex-wrap: wrap
-    justify-content: space-between
-    padding: 0
-    gap: 1rem
-
-    @include mixins.phone
-        flex-direction: column
-        @include mixins.flex-center
-        height: 3000px
-
-    &-card
-        flex: 1
-        height: 600px
-        padding: 1rem
-        @include mixins.tablet
-            height: 300px
-        @include mixins.phone
-            height: 300px
-            width: 100%
-
-        &-info
-            @include mixins.flex-center
-            display: none
-            height: 100%
-            flex-direction: column
-            justify-content: space-between
-            color: variables.$primary-color
-            margin: 0 auto
-            &-list
-                display: flex
-                width: 100%
-                justify-content: center
-                gap: 1rem
-                flex-wrap: wrap
-                li
-                    padding: 0.5rem
-                    background: variables.$bg-color
-
-            @include mixins.phone
-                width: 90%
-                margin-bottom: 6%
-            &-btn
-                color: variables.$primary-color
-                background-color: variables.$secondary-color
-                font-weight: 600
-                padding: 1rem
-                text-transform: uppercase
-                letter-spacing: 1px
-        &.active
-            transform: scale(0.90)
-            color: variables.$bg-color
-            background-color: variables.$secondary-color
-            &.active
-                .projects-card-info
-                    display: flex
-    #card-1
-        @include mixins.bg-img('atena.jpg')
-    #card-2
-        @include mixins.bg-img('coffee-delivery.png')
-    #card-3
-        @include mixins.bg-img('ideal.jpg')
-    #card-4
-        @include mixins.bg-img('coffee-house.jpg')
-    #card-5
-        @include mixins.bg-img('idy-program.jpg')
-    #card-6
-        @include mixins.bg-img('ignite-feed.png')
-    #card-7
-        @include mixins.bg-img('vision-gallery.png')
-.paralax
-    background-image: url("/img/fundo.jpg")
-    background-repeat: no-repeat
-    background-size: cover
-    position: fixed
-    width: 100%
 main
     position: relative
     top: 100vh
-    background: variables.$bg-color
-.apresentation
-    @include mixins.flex
-    @include mixins.container
-    justify-content: space-between
-    height: calc( 100vh - 6.3rem )
-    text-align: center
-    flex-direction: column
-    gap: 3rem
-
-    @include mixins.phone
-        height: calc( 100vh - 5rem )
-
-    &-text
-        @include mixins.flex
-        flex-direction: column
-        gap: 1rem
-        margin: auto 0
-        &-regular
-            font-weight: 500
-            font-size: 1rem
-
-        &-bold
-            font-weight: 600
-            font-size: 1.25rem
-    h2
-        font-weight: 700
-        font-size: 2rem
-        color: variables.$secondary-color
-    &-arrows
-
-        i
-            color: variables.$secondary-color
-            font-size: 1.5rem
-            font-weight: bold
-            position: relative
-
-.tecnologies
     display: flex
-    margin: 1rem auto
-    justify-content: space-between
-    width: 1200px
-    height: 6rem
-    i
-        padding: 1rem 0
-        font-size: 4rem
-        &:hover
-            transform: rotateY(360deg)
-            transition: 1s
+    flex-direction: column
+    gap: 2rem
+    margin: 0 1rem
+
+.paralax
+    position: fixed
+    width: 100%
 
 footer
     text-align: center
     padding: 2rem
-
+    
     span
         color: variables.$secondary-color
+
+h2
+    font-weight: 700
+    font-size: 1.5rem
+    color: variables.$secondary-color
+    text-align: center
